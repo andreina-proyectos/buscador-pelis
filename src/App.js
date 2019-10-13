@@ -1,28 +1,29 @@
 import React, {Component} from 'react';
 import './App.css';
 import 'bulma/css/bulma.css';
-import Title from './components/Title';
-import SearchForm from './components/SearchForm';
+import {Switch, Route} from 'react-router-dom';
 
-class App extends Component {
-  state = {results: []}
-  handleResults = (results) => {
-    this.setState({results})
-  }
+import  Home from './pages/Home';
+import Detail from './pages/Detail';
+import NotFound from './pages/NotFound';
 
+class App extends Component { 
   render() {
     return (
       <div className="App">
-        <Title>Search Movies🍿</Title>
-        <div className="SearchForm-wrapper">
-          <SearchForm
-            onResults={this.handleResults}
+        <Switch>
+          <Route 
+            exact path='/'
+            component={Home} 
           />
-        </div>
-        {this.state.results.length === 0 
-          ? <p className="p">Sin resultados</p> 
-          : <p className="p">Con resultados</p> 
-        }
+          <Route 
+            path='/detail/:movieId'
+            component={Detail}
+          />
+          <Route 
+            component={NotFound}
+          />
+        </Switch>
       </div>
     );
   }
