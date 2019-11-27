@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import Movie from './Movie';
+import './Home.scss';
 
 class MoviesList extends Component {
   render() {

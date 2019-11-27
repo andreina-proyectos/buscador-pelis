@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import PropTypes from 'prop-types';
 import Title from '../components/Title';
 import SearchForm from '../components/SearchForm';
 import MoviesList from '../components/MoviesList';
+import './Home.scss';
 
 class Home extends Component {
   state = {

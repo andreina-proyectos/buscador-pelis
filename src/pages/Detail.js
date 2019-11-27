@@ -36,8 +36,4 @@ class Detail extends Component {
   }
 }
 
-// Detail.propTypes = {
-//   id:PropTypes.string,
-// }
-
 export default Detail;
